@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        # Recursive depth search approach. Swap values of left and right nodes and traverse it recursively.
+        # Recursive DFS approach. Swap values of left and right nodes and traverse it recursively (depth first).
         if root is None:
             return root
         
@@ -24,4 +24,4 @@ class Solution:
         traverse(root)
         return root
 
-        
+# Time and space complexity is linear O(N) where N is number of nodes in tree. 
