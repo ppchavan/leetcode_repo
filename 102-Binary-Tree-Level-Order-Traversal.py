@@ -23,10 +23,8 @@ class Solution:
 
                 if n:
                     level.append(n.val)
-                    if n.left:
-                        q.append(n.left)
-                    if n.right:
-                        q.append(n.right)
+                    q.append(n.left)
+                    q.append(n.right)
             # After processing level, add it to result
             if level:
                 res.append(level)
