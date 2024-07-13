@@ -8,27 +8,27 @@ class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root is None:
             return []
-        
-        # Breadth first search approach (BFS) explained in https://www.youtube.com/watch?v=6ZnyEApgFYg
-        res = []        
-        q = collections.deque()
-        q.append(root)
+
+        # Breadth first search approach (BFS) explained in https://www.youtube.com/watch?v=6ZnyEApgFYg       
+        q = collections.deque([root])
+        res = []
 
         while q:
-            q_len = len(q)
             level = []
-            # Process through entire level
-            for i in range(q_len):
-                n = q.popleft()
+            # This variable is necessary to record the length of queue before we start for loop, since we will append nodes. So length may change later.         
+            qlen = len(q)
+            # This for loop is necessary to go over all nodes in a particular level
+            for i in range(qlen):
+                node = q.popleft()
+                if node:
+                    level.append(node.val)
+                    if node.left:
+                        q.append(node.left)
+                    if node.right:
+                        q.append(node.right)
+            # After for loop ends, processing for a single level is finished so add to result   
+            res.append(level)
 
-                if n:
-                    level.append(n.val)
-                    q.append(n.left)
-                    q.append(n.right)
-            # After processing level, add it to result
-            if level:
-                res.append(level)
-        return res
+        return res        
 
-        
-        
+# Time complexity is O(N) since we visit each node in tree only once.
