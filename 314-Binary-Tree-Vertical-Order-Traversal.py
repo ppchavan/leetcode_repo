@@ -23,7 +23,7 @@ class Solution:
         # Use a queue of tuples, first element represents x coordinate and second element is node value
         q.append((0, root))
 
-        # Start BFS traversal
+        # BFS traversal
         while q:
             x, node = q.popleft()
 
@@ -34,12 +34,13 @@ class Solution:
                 q.append((x-1, node.left))
             if node.right:
                 q.append((x+1, node.right))
+            # BFS traversal is completed here.
         
         # Get sorted list from set of x co-ordinates
         xlist = sorted(xset)
         for level in xlist:
-            print(level)
             res.append(m[level])
         
-        return res        
-        
+        return res
+
+# Here time complexity is O(N) since we visit every node in tree only once (BFS)
