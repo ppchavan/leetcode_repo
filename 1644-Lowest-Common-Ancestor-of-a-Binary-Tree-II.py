@@ -8,8 +8,8 @@
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         """ 
-        These pfound and qfound flags are required since its not guaranteed if p and q are both present in given tree. 
-        If one of them is not present in entire tree, we need to return None.
+        These found flags are required since its not guaranteed if p and q are both present in given tree. 
+        If either of them is not present in entire tree, we need to return None.
         """
         pfound = False
         qfound = False
