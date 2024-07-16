@@ -32,3 +32,4 @@ class Solution:
         return -1
 
 # Time complexity is O(logN) since we perform binary search
+# Explanation: https://www.youtube.com/watch?v=U8XENwh8Oy8
