@@ -1,5 +1,6 @@
 class Solution:
     def findMin(self, nums: List[int]) -> int:
+        # Solution is a slight variation of answer in https://www.youtube.com/watch?v=nIVW4P8b1VA
         if not nums:
             return -1
         
