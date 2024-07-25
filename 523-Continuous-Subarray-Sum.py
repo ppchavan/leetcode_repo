@@ -16,7 +16,7 @@ class Solution:
             if r not in remainder:
                 remainder[r] = i
             # Key was found, so check if subarray length is greater than 1 (at least 2 elements long)
-            elif i - remainder[r] > 1:
+            elif (i - remainder[r]) > 1:
                 return True
         
         # If solution not found after full iteration, means there is no subarray sum which is multiple of k
